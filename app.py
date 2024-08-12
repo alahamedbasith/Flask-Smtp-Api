@@ -20,11 +20,11 @@ mail = Mail(app)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, world!'
+    return 'This is SMTP API server for www.ahamedbasith.com'
 
 @app.route('/contact', methods=['GET'])
 def contact_get():
-    return 'Hello!'
+    return 'This is SMTP API server for www.ahamedbasith.com'
 
 @app.route('/contact', methods=['POST'])
 def contact_post():
