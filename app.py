@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
+from flask_cors import CORS  
 import os
 
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)
 
 # Load environment variables from .env file
 load_dotenv()
