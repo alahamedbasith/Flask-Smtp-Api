@@ -35,13 +35,14 @@ def contact_post():
     data = request.json
     name = data.get('name')
     email = data.get('email')
+    subject = data.get('subject')
     message = data.get('message')
 
-    print(f"Name: {name}, Email: {email}, Message: {message}")
+    print(f"Name: {name}, Email: {email},Subject: {subject}, Message: {message}")
 
     msg = Message('Contact Form Submission',
                   recipients=[os.getenv('MAIL_USERNAME')])
-    msg.body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+    msg.body = f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}"
 
     try:
         mail.send(msg)
